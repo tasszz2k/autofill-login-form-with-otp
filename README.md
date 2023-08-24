@@ -1,5 +1,5 @@
 # AutoFill-with-OTP Extension
-<img alt="img.png" src="img.png" width="60%"/>
+<img alt="img.png" src="docs/img.png" width="60%"/>
 <img alt="img_1.png" src="docs/img_1.png" width="60%"/>
 
 ## Overview
