@@ -63,5 +63,5 @@ AutoFill_with_OTP_Extension/
 
 ### Nice-to-Have Features
 - [ ] Encrypt user data
-- [ ] Show current configurations, hide sensitive data
+- [ ] Show current configurations, mask sensitive data
 - [ ] Enhance UI/UX

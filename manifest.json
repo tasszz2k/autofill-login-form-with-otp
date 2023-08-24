@@ -33,6 +33,7 @@
   },
   "permissions": [
     "storage",
-    "activeTab"
+    "activeTab",
+    "clipboardWrite"
   ]
 }
