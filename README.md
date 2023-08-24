@@ -1,7 +1,15 @@
 # AutoFill-with-OTP
+
+## Overview
 The AutoFill with OTP Chrome extension provides an automated solution to fill in usernames and passwords—augmented with One-Time Passwords (OTP)—on specified web pages. The extension aims to streamline the login process for websites, especially those requiring an additional layer of security through OTPs, without compromising user data security.
 
+## Features
+- Autofill username and password fields on specified web pages
+- Generate OTP
+- Copy OTP to clipboard
+- Automatically submit login form
 
+## Structure Project
 ```
 AutoFill_with_OTP_Extension/
 │
@@ -40,3 +48,20 @@ AutoFill_with_OTP_Extension/
 │
 └── README.md                  # Project documentation and instructions
 ```
+
+## Installation
+
+
+## TODO List
+### Must-Have Features
+- [x] Input username, password, secret key (for OTP generation), and URLs of the website to be autofilled
+- [x] Store user data in local storage
+- [x] Autofill username and password fields on specified web pages
+- [ ] Generate OTP
+- [ ] Copy OTP to clipboard
+- [ ] Automatically submit login form
+
+### Nice-to-Have Features
+- [ ] Encrypt user data
+- [ ] Show current configurations, hide sensitive data
+- [ ] Enhance UI/UX
