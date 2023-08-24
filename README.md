@@ -1,6 +1,7 @@
 # AutoFill-with-OTP Extension
+<img alt="img.png" src="img.png" width="60%"/>
+<img alt="img_1.png" src="docs/img_1.png" width="60%"/>
 
-![img_1.png](docs/img_1.png)
 ## Overview
 
 The **AutoFill with OTP** Chrome extension is a seamless solution that automates the process of inputting usernames, passwords, and One-Time Passwords (OTP) on user-specified web pages. Designed for enhancing the user experience on sites requiring added OTP security, the extension ensures efficient logins while prioritizing data security.
