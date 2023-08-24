@@ -10,25 +10,34 @@
 
 <div class="input-group">
     <label for="username">Username:</label>
-    <input type="text" id="username">
+    <input type="text" id="username" placeholder="username">
 </div>
 
 <div class="input-group">
     <label for="password">Password:</label>
-    <input type="password" id="password" placeholder="****">
+    <input type="password" id="password" placeholder="******">
 </div>
 
 <div class="input-group">
     <label for="secret">OTP Secret:</label>
-    <input type="password" id="secret" placeholder="****">
+    <input type="password" id="secret" placeholder="****************">
 </div>
 
 <div class="input-group">
+    <label for="current-otp">OTP:</label>
+    <input type="text" id="current-otp" readonly disabled >
+    <progress id="otp-progress-bar" value="30" max="30"></progress>
+</div>
+
+
+
+<div class="input-group">
     <label for="urlPatterns">URL Patterns (each on a new line):</label>
-    <textarea id="urlPatterns" rows="4"></textarea>
+    <textarea id="urlPatterns" rows="3" placeholder="https://your-app.your-company.com/"></textarea>
 </div>
 
 <button id="saveBtn" class="btn-primary">Save</button>
+
 <button id="copyPasswordBtn" class="btn-secondary">Copy Password + OTP</button>
 
 <div id="notification" class="notification"></div>

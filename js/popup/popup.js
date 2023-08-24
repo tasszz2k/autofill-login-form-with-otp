@@ -79,3 +79,45 @@ function showNotification(message, type) {
     }, 1000);
 }
 
+
+// Generate OTP every 30 seconds
+let currentSecret = ''; // We'll fetch and store the secret here.
+const OTP_DURATION = 30; // in seconds
+let otpCountdown = OTP_DURATION; // current countdown value
+
+function updateOTPCountdown() {
+    const progressBar = document.getElementById('otp-progress-bar');
+    progressBar.value = otpCountdown;
+
+    if (otpCountdown <= 0) {
+        otpCountdown = OTP_DURATION; // Reset to 30s when reaching 0
+    } else {
+        otpCountdown--;
+    }
+}
+// Update the OTP and countdown logic:
+function updateOTP() {
+    if (!currentSecret) return; // If there's no secret, don't try to generate an OTP.
+
+    const otp = window.otplib.authenticator.generate(currentSecret);
+    document.getElementById('current-otp').value = otp;
+    otpCountdown = OTP_DURATION; // Reset countdown
+    updateOTPCountdown();
+}
+
+
+// When the popup opens, fetch the current secret and start the OTP updates.
+chrome.storage.sync.get('secret', function(data) {
+    if (data.secret) {
+        currentSecret = data.secret;
+        updateOTP();
+
+        // Update the OTP every 30 seconds.
+        setInterval(updateOTP, 30000);
+
+        // Update countdown every second.
+        setInterval(updateOTPCountdown, 1000);
+    } else {
+        // Handle the case where there's no secret.
+    }
+});
