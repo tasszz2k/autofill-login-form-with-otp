@@ -8,6 +8,11 @@ document.getElementById('saveBtn').addEventListener('click', function() {
         password: password,
         secret: secret
     }, function() {
-        console.log("Settings saved.");
+        if (chrome.runtime.lastError) {
+            console.error("Error saving settings:", chrome.runtime.lastError);
+        } else {
+            console.log("Settings saved successfully.");
+            console.log("Saved values - Username:", username, "Password:", password, "Secret:", secret);
+        }
     });
 });
