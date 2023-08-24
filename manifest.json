@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extensionName__",
+  "default_locale": "en",
+  "description": "Automatically fills in usernames and passwords with OTP on specified websites.",
+  "version": "1.0",
+  "icons": {
+    "16": "assets/images/icon16.png",
+    "48": "assets/images/icon48.png",
+    "128": "assets/images/icon128.png"
+  },
+  "background": {
+    "service_worker": "js/background/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"], 
+      "js": ["js/content/content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "html/popup.html",
+    "default_icon": {
+      "16": "assets/images/icon16.png",
+      "48": "assets/images/icon48.png",
+      "128": "assets/images/icon128.png"
+    }
+  },
+  "permissions": ["storage", "activeTab"]
+}
