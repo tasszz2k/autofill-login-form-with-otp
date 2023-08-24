@@ -1,13 +1,16 @@
-# AutoFill-with-OTP
+# AutoFill-with-OTP Extension
 
+![img_1.png](docs/img_1.png)
 ## Overview
-The AutoFill with OTP Chrome extension provides an automated solution to fill in usernames and passwords—augmented with One-Time Passwords (OTP)—on specified web pages. The extension aims to streamline the login process for websites, especially those requiring an additional layer of security through OTPs, without compromising user data security.
 
-## Features
-- Autofill username and password fields on specified web pages
-- Generate OTP
-- Copy OTP to clipboard
-- Automatically submit login form
+The **AutoFill with OTP** Chrome extension is a seamless solution that automates the process of inputting usernames, passwords, and One-Time Passwords (OTP) on user-specified web pages. Designed for enhancing the user experience on sites requiring added OTP security, the extension ensures efficient logins while prioritizing data security.
+
+## Key Features
+
+- **Swift Autofill**: Automatically inputs username and password on designated web pages.
+- **On-the-Go OTP Generation**: Instantly produces OTPs for login procedures.
+- **Clipboard Functionality**: Enables quick copying of OTP to the clipboard.
+- **Auto Submission**: Submit login forms automatically post OTP generation and input.
 
 ## Structure Project
 ```
@@ -50,6 +53,52 @@ AutoFill_with_OTP_Extension/
 ```
 
 ## Installation
+
+### Prerequisites
+
+- Google Chrome browser.
+- Git (for cloning the repository).
+
+### Steps
+
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/tasszz2k/AutoFill-with-OTP
+    ```
+
+2. **Open Chrome Extensions Page**:
+    - Launch your Chrome browser.
+    - Enter `chrome://extensions/` in the address bar.
+    - Toggle on "Developer mode" located in the top right corner.
+
+3. **Load the Extension**:
+    - Select "Load unpacked" and navigate to the directory of the cloned repository.
+    - The **AutoFill with OTP** extension should now appear in your list of Chrome extensions.
+
+4. **Initial Configuration**:
+    - Click on the newly added extension icon in your browser toolbar.
+    - Follow the on-screen prompts to set it up for your desired websites.
+
+---
+
+## Usage
+
+1. **Accessing the Extension**:
+    - Click on the **AutoFill with OTP** extension icon in your browser toolbar to reveal the popup interface.
+
+2. **Input User Details**:
+    - Enter your preferred username, password, OTP secret key, and specify the URLs on which you'd like the autofill feature.
+
+3. **Experience Seamless Logins**:
+    - When you visit any of the designated URLs, the extension will automatically populate the username and password fields and instantly generate an OTP.
+
+4. **Quick OTP Access**:
+    - Should you need to copy the OTP, use the "Copy OTP" function within the extension's popup for a quick clipboard access.
+
+5. **Configuration Management**:
+    - To modify or update configurations, simply access the extension's popup and make the necessary changes.
+
+
 
 
 ## TODO List
