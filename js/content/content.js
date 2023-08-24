@@ -9,9 +9,7 @@ function triggerEvents(element) {
     });
 }
 
-window.addEventListener('load', function () {
-    console.log("Window loaded. Now attempting to autofill...");
-
+function autoFillFields() {
     const usernameField = document.querySelector('input[name="username"], input[id="login_username"], input[id="user_login"]');
     const passwordField = document.querySelector('input[name="password"], input[id="login_password"], input[id="user_pass"]');
 
@@ -35,6 +33,11 @@ window.addEventListener('load', function () {
             console.log("Could not fill password field.");
         }
     });
+}
+
+window.addEventListener('load', function () {
+    console.log("Window loaded. Now attempting to autofill...");
+    setTimeout(autoFillFields, 500);
 });
 
 
@@ -44,7 +47,5 @@ function generateOTP(secret) {
     console.log("Generated OTP:", otp);
     return otp;
 }
-
-
 
 
