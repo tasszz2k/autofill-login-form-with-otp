@@ -57,11 +57,11 @@ AutoFill_with_OTP_Extension/
 - [x] Input username, password, secret key (for OTP generation), and URLs of the website to be autofilled
 - [x] Store user data in local storage
 - [x] Autofill username and password fields on specified web pages
-- [ ] Generate OTP
-- [ ] Copy OTP to clipboard
+- [x] Generate OTP
+- [x] Copy OTP to clipboard
 - [ ] Automatically submit login form
 
 ### Nice-to-Have Features
 - [ ] Encrypt user data
-- [ ] Show current configurations, mask sensitive data
+- [x] Show current configurations, mask sensitive data
 - [ ] Enhance UI/UX
