@@ -19,7 +19,6 @@ document.getElementById('saveBtn').addEventListener('click', function () {
     });
 
     showNotification("Configurations saved successfully.", "success");
-
 });
 
 
@@ -43,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //3. UI user have a button copy password (password+OTP)
 document.getElementById('copyPasswordBtn').addEventListener('click', function () {
-    showNotification("Clicked", "error"); // Added error notification
+    // showNotification("Clicked", "error"); // Added error notification
 
     chrome.storage.sync.get(['password', 'secret'], function (data) {
         if (data.password && data.secret) {

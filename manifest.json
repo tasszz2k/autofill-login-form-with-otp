@@ -18,7 +18,9 @@
         "<all_urls>"
       ],
       "js": [
-        "js/content/content.js"
+        "js/content/content.js",
+        "js/libs/buffer.js",
+        "js/libs/index.js"
       ],
       "run_at": "document_end"
     }
