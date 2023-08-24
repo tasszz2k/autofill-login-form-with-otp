@@ -8,39 +8,51 @@
 <body>
 <h1 class="header">AutoFill Settings</h1>
 
-<div class="input-group">
-    <label for="username">Username:</label>
-    <input type="text" id="username" placeholder="username">
-</div>
+<details>
+    <summary>Settings</summary>
+    <div class="input-group">
 
-<div class="input-group">
-    <label for="password">Password:</label>
-    <input type="password" id="password" placeholder="******">
-</div>
+    </div>
 
-<div class="input-group">
-    <label for="secret">OTP Secret:</label>
-    <input type="password" id="secret" placeholder="****************">
-</div>
+    <div class="input-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="username">
+    </div>
 
-<div class="input-group">
-    <label for="current-otp">OTP:</label>
-    <input type="text" id="current-otp" readonly disabled >
-    <progress id="otp-progress-bar" value="30" max="30"></progress>
-</div>
+    <div class="input-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="******">
+    </div>
+
+    <div class="input-group">
+        <label for="secret">OTP Secret:</label>
+        <input type="password" id="secret" placeholder="****************">
+    </div>
+
+    <div class="input-group">
+        <label for="current-otp">OTP:</label>
+        <input type="text" id="current-otp" readonly disabled>
+        <progress id="otp-progress-bar" value="30" max="30"></progress>
+    </div>
+
+    <div class="input-group">
+        <label for="urlPatterns">URL Patterns (each on a new line):</label>
+        <textarea id="urlPatterns" rows="3" placeholder="https://your-app.your-company.com/"></textarea>
+    </div>
 
 
+    <button id="saveBtn" class="btn-primary">Save</button>
 
-<div class="input-group">
-    <label for="urlPatterns">URL Patterns (each on a new line):</label>
-    <textarea id="urlPatterns" rows="3" placeholder="https://your-app.your-company.com/"></textarea>
-</div>
-
-<button id="saveBtn" class="btn-primary">Save</button>
+</details>
 
 <button id="copyPasswordBtn" class="btn-secondary">Copy Password + OTP</button>
 
-<div id="notification" class="notification"></div>
+<div id="notificationModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <p id="modalMessage"></p>
+    </div>
+</div>
 
 <script src="../js/libs/buffer.js"></script>
 <script src="../js/libs/index.js"></script>

@@ -67,18 +67,6 @@ function copyToClipboard(text) {
 }
 
 
-function showNotification(message, type) {
-    const notificationElement = document.getElementById('notification');
-
-    notificationElement.textContent = message;
-    notificationElement.className = `notification ${type} show`;
-
-    // Hide the notification after 3 seconds
-    setTimeout(() => {
-        notificationElement.className = 'notification';
-    }, 1000);
-}
-
 
 // Generate OTP every 30 seconds
 let currentSecret = ''; // We'll fetch and store the secret here.
@@ -119,5 +107,37 @@ chrome.storage.sync.get('secret', function(data) {
         setInterval(updateOTPCountdown, 1000);
     } else {
         // Handle the case where there's no secret.
+    }
+});
+
+
+const modal = document.getElementById('notificationModal');
+const span = document.getElementsByClassName("close-btn")[0];
+const modalMessage = document.getElementById('modalMessage');
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+function showNotification(message, type) {
+    modalMessage.textContent = message;
+    modal.style.display = "block";
+}
+
+
+// detail option
+const detailsElement = document.querySelector('details');
+
+detailsElement.addEventListener('toggle', event => {
+    if (detailsElement.open) {
+        // The details have been expanded, perhaps save this state somewhere
+    } else {
+        // The details have been collapsed, perhaps save this state too
     }
 });
