@@ -99,7 +99,9 @@ AutoFill_with_OTP_Extension/
 5. **Configuration Management**:
     - To modify or update configurations, simply access the extension's popup and make the necessary changes.
 
-
+## Migration
+### From Backup OTP Secret Authenticator
+- If you are using the Authenticator extension, follow this [guideline](docs/backup_otp_secret_authenticator.md) to migrate your OTP secret key to **AutoFill with OTP** extension.
 
 
 ## TODO List
