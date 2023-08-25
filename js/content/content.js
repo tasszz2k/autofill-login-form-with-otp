@@ -1,7 +1,7 @@
 console.log("AutoFill_with_OTP_Extension content script is running.");
 
-const username_fields = ['username', 'login_username', 'user_login', 'user', 'login-form-username', 'os_username'];
-const password_fields = ['password', 'login_password', 'user_pass', 'login-form-password', 'os_password'];
+const username_fields = ['username', 'login_username', 'user_login', 'user', 'login-form-username', 'os_username', 'Username'];
+const password_fields = ['password', 'login_password', 'user_pass', 'login-form-password', 'os_password', 'Password', 'PIN + Google OTP'];
 
 function triggerEvents(element) {
     ['input', 'change', 'keydown'].forEach(eventType => {
@@ -50,10 +50,9 @@ function generateOTP(secret) {
     return otp;
 }
 
-// support both id and name attributes
+// support both id, name, and placeholder attributes
 function getSelectorString(selectors) {
-    // format: input[name="username"], input[id="username"], ...
-    return selectors.map(selector => `input[name="${selector}"], input[id="${selector}"]`).join(', ');
-
+    // format: input[name="username"], input[id="username"], input[placeholder="Username"], ...
+    return selectors.map(selector => `input[name="${selector}"], input[id="${selector}"], input[placeholder="${selector}"]`).join(', ');
 }
 
