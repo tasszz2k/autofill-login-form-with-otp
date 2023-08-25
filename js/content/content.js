@@ -1,5 +1,3 @@
-// import { authenticator } from '@otplib/preset-browser';
-
 console.log("AutoFill_with_OTP_Extension content script is running.");
 
 const username_fields = ['username', 'login_username', 'user_login', 'user', 'login-form-username', 'os_username'];
@@ -18,7 +16,7 @@ function autoFillFields() {
 
 
     chrome.storage.sync.get(['username', 'password', 'secret'], function (data) {
-        console.log("Fetched values from storage -", data);
+        // console.log("Fetched values from storage -", data);
 
         if (usernameField && data.username && !usernameField.value) {
             usernameField.value = data.username;
@@ -32,7 +30,8 @@ function autoFillFields() {
             const otp = generateOTP(data.secret);
             passwordField.value = data.password + otp;
             triggerEvents(passwordField);
-            console.log("Filled password field with:", data.password + otp);
+            // log the mask password with OTP
+            console.log("Filled password field with:", "******" + otp);
         } else {
             console.log("Could not fill password field.");
         }
@@ -48,7 +47,6 @@ window.addEventListener('load', function () {
 function generateOTP(secret) {
     // Your logic to generate OTP.
     let otp = window.otplib.authenticator.generate(secret);
-    console.log("Generated OTP:", otp);
     return otp;
 }
 
