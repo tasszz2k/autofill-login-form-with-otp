@@ -1,6 +1,6 @@
 # AutoFill-with-OTP Extension
-<img alt="img.png" src="docs/img.png" width="60%"/>
-<img alt="img_1.png" src="docs/img_1.png" width="60%"/>
+<img alt="img.png" src="docs/img.png" width="100%"/>
+<img alt="img_1.png" src="docs/img_1.png" width="100%"/>
 
 ## Overview
 
@@ -94,24 +94,25 @@ AutoFill_with_OTP_Extension/
     - When you visit any of the designated URLs, the extension will automatically populate the username and password fields and instantly generate an OTP.
 
 4. **Quick OTP Access**:
-    - Should you need to copy the OTP, use the "Copy OTP" function within the extension's popup for a quick clipboard access.
+    - Should you need to copy the OTP, use the "Copy OTP" function within the extension's popup for quick clipboard access.
 
 5. **Configuration Management**:
     - To modify or update configurations, simply access the extension's popup and make the necessary changes.
 
 ## Migration
 ### From Backup OTP Secret Authenticator
-- If you are using the Authenticator extension, follow this [guideline](docs/backup_otp_secret_authenticator.md) to migrate your OTP secret key to **AutoFill with OTP** extension.
+- If you are using the [Authenticator](https://authenticator.cc/) extension, follow this [guideline](docs/backup_otp_secret_authenticator.md) to migrate your OTP secret key to **AutoFill with OTP** extension.
 
 
 ## TODO List
 ### Must-Have Features
 - [x] Input username, password, secret key (for OTP generation), and URLs of the website to be autofilled
 - [x] Store user data in local storage
-- [x] Autofill username and password fields on specified web pages
+- [x] Autofill username and password fields
+- [ ] Filter URLs
 - [x] Generate OTP
 - [x] Copy OTP to clipboard
-- [ ] Automatically submit login form
+- [ ] Automatically submit a login form
 
 ### Nice-to-Have Features
 - [ ] Encrypt user data
