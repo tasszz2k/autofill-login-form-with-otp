@@ -2,16 +2,20 @@
 
 console.log("AutoFill_with_OTP_Extension content script is running.");
 
+const username_fields = ['username', 'login_username', 'user_login', 'user'];
+const password_fields = ['password', 'login_password', 'user_pass'];
+
 function triggerEvents(element) {
     ['input', 'change', 'keydown'].forEach(eventType => {
-        const event = new Event(eventType, { 'bubbles': true });
+        const event = new Event(eventType, {'bubbles': true});
         element.dispatchEvent(event);
     });
 }
 
 function autoFillFields() {
-    const usernameField = document.querySelector('input[name="username"], input[id="login_username"], input[id="user_login"]');
-    const passwordField = document.querySelector('input[name="password"], input[id="login_password"], input[id="user_pass"]');
+    const usernameField = document.querySelector(getSelectorString(username_fields));
+    const passwordField = document.querySelector(getSelectorString(password_fields));
+
 
     chrome.storage.sync.get(['username', 'password', 'secret'], function (data) {
         console.log("Fetched values from storage -", data);
@@ -37,7 +41,7 @@ function autoFillFields() {
 
 window.addEventListener('load', function () {
     console.log("Window loaded. Now attempting to autofill...");
-    setTimeout(autoFillFields, 500);
+    setTimeout(autoFillFields, 1000);
 });
 
 
@@ -48,4 +52,10 @@ function generateOTP(secret) {
     return otp;
 }
 
+// support both id and name attributes
+function getSelectorString(selectors) {
+    // format: input[name="username"], input[id="username"], ...
+    return selectors.map(selector => `input[name="${selector}"], input[id="${selector}"]`).join(', ');
+
+}
 
