@@ -2,8 +2,8 @@
 
 console.log("AutoFill_with_OTP_Extension content script is running.");
 
-const username_fields = ['username', 'login_username', 'user_login', 'user'];
-const password_fields = ['password', 'login_password', 'user_pass'];
+const username_fields = ['username', 'login_username', 'user_login', 'user', 'login-form-username', 'os_username'];
+const password_fields = ['password', 'login_password', 'user_pass', 'login-form-password', 'os_password'];
 
 function triggerEvents(element) {
     ['input', 'change', 'keydown'].forEach(eventType => {
